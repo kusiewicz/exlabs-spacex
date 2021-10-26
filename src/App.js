@@ -1,7 +1,6 @@
 import React from 'react';
+import { Home } from './pages';
 
-function App() {
-  return <h1>hello</h1>;
-}
+const App = () => <Home />;
 
 export default App;
