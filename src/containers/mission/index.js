@@ -1,5 +1,5 @@
 import React from 'react';
-import { InfoBox } from '../../components';
+import { InfoBox, Button, Status } from '../../components';
 
 export const MissionContainer = () => {
   return (
@@ -7,14 +7,17 @@ export const MissionContainer = () => {
       <InfoBox.Inner>
         <InfoBox.Group>
           <InfoBox.Title>MISSSION</InfoBox.Title>
-          <InfoBox.Info fontSize="42px" bold>
+          <InfoBox.Info fontSize="42px" mobileFontSize="34px" bold>
             Starlink-12 v1.0
           </InfoBox.Info>
         </InfoBox.Group>
         <InfoBox.Group>
           <InfoBox.Title>ROCKET</InfoBox.Title>
-          <InfoBox.Info>Falcon 9</InfoBox.Info>
+          <InfoBox.Info>
+            Falcon 9 <Status recovered>RECOVERED</Status>
+          </InfoBox.Info>
         </InfoBox.Group>
+        <Button>LEARN MORE</Button>
       </InfoBox.Inner>
 
       <InfoBox.Inner>

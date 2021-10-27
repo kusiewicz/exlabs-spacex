@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 640px) {
+  @media (max-width: 800px) {
     padding: 25px 30px 0px 30px;
   }
 `;
@@ -29,7 +29,7 @@ export const Frame = styled.div`
   height: 35px;
   width: 300px;
 
-  @media (max-width: 640px) {
+  @media (max-width: 800px) {
     height: 30px;
     width: 185px;
   }
