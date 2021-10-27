@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-import Header from './Header/index';
+import Header from '../index';
 
 import logo from '../assets/images/logo.png';
 
