@@ -33,9 +33,11 @@ export const Info = styled.p`
   font-size: ${({ fontSize }) => (fontSize ? fontSize : '18px')};
   font-weight: ${({ bold }) => bold && '500'};
   color: white;
+  position: relative;
 
   @media (max-width: 800px) {
     font-size: ${({ mobileFontSize }) => (mobileFontSize ? mobileFontSize : '16px')};
+  }
   }
 `;
 
