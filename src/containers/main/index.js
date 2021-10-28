@@ -24,7 +24,7 @@ export const MainContainer = ({ data }) => {
       <InfoBox>
         <InfoBox.Inner>
           <InfoBox.Group>
-            <InfoBox.Title>MISSSION</InfoBox.Title>
+            <InfoBox.Title>MISSION</InfoBox.Title>
             <InfoBox.Info fontSize="42px" mobileFontSize="34px" bold>
               {missionName}
             </InfoBox.Info>
@@ -53,7 +53,8 @@ export const MainContainer = ({ data }) => {
           </InfoBox.Group>
         </InfoBox.Inner>
       </InfoBox>
-      <ShipContainer ships={ships} />
+
+      {ships && <ShipContainer ships={ships} />}
     </>
   );
 };
