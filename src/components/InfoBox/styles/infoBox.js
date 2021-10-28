@@ -52,6 +52,7 @@ export const Info = styled.p`
   font-weight: ${({ bold }) => bold && '500'};
   color: white;
   position: relative;
+  letter-spacing: 0.3px;
 
   @media (max-width: 800px) {
     font-size: ${({ mobileFontSize }) => (mobileFontSize ? mobileFontSize : '16px')};

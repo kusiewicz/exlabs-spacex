@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { InfoBox, Button, Status } from '../../components';
-import { ShipContainer } from '../ship';
+import { ShipContainer } from '../ships';
 import { getFormattedData } from '../../utils/getFormattedData';
 
 export const MainContainer = ({ data }) => {

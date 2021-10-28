@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from '../components';
+import { Header, Loading } from '../components';
 import { apolloData } from '../lib/apolloData';
 import { MainContainer } from '../containers/main';
 
@@ -40,7 +40,7 @@ export const Home = () => {
           <MainContainer id={id} data={missionsData[id]} />
         </>
       ) : (
-        <h1>loading..</h1>
+        <Loading />
       )}
     </>
   );
