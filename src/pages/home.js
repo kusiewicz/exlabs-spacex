@@ -6,18 +6,18 @@ import { MainContainer } from '../containers/main';
 import logo from '../assets/images/logo.png';
 
 export const Home = () => {
-  const [missionsData, setData] = useState([]);
-  const [id, setId] = useState(0);
+  const [missionData, setData] = useState([]);
+  const [id, setId] = useState(1);
 
   useEffect(() => {
-    apolloData()
+    apolloData(id)
       .catch((err) => console.log(err))
-      .then((data) => setData(data.data.launchesPast));
-  }, []);
+      .then((data) => setData(data.data.launchLatest));
+  }, [id]);
 
   return (
     <>
-      {missionsData.length > 1 ? (
+      {Object.keys(missionData).length > 1 ? (
         <>
           <Header>
             <Header.Arrow
@@ -31,13 +31,13 @@ export const Home = () => {
               <Header.Logo src={logo} />
             </Header.Frame>
             <Header.Arrow
-              disabled={id === missionsData.length - 1}
+              disabled={id === 108}
               action="next"
               direction="right"
               onClick={() => setId((id) => (id += 1))}
             />
           </Header>
-          <MainContainer id={id} data={missionsData[id]} />
+          <MainContainer id={id} data={missionData} />
         </>
       ) : (
         <Loading />

@@ -19,12 +19,12 @@ export const Container = styled.div`
   gap: 30px;
   width: 100%;
   flex-wrap: wrap;
+  padding-bottom: 50px;
 
   @media (max-width: 1000px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 50px;
   }
 
   @media (min-width: 1000px) and (max-width: 1400px) {

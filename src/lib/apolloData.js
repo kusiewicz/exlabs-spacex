@@ -5,11 +5,13 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export async function apolloData() {
+/* id - needed to get mission data (e.g. 1 - newest [available in API]) */
+
+export async function apolloData(id) {
   const fetched = await client.query({
     query: gql`
-      query ($limit: Int) {
-        launchesPast(limit: $limit) {
+      query ($offset: Int) {
+        launchLatest(offset: $offset) {
           mission_name
           launch_date_local
           launch_site {
@@ -33,7 +35,7 @@ export async function apolloData() {
       }
     `,
     variables: {
-      limit: 10,
+      offset: id,
     },
   });
   return fetched;
