@@ -6,7 +6,7 @@ import { MainContainer } from '../containers/main';
 import logo from '../assets/images/logo.png';
 
 export const Home = () => {
-  const [missionData, setData] = useState([]);
+  const [missionsData, setData] = useState([]);
   const [id, setId] = useState(0);
 
   useEffect(() => {
@@ -15,14 +15,15 @@ export const Home = () => {
       .then((data) => setData(data.data.launchesPast));
   }, []);
 
-  console.log(id);
+  console.log(missionsData);
 
   return (
     <>
-      {missionData.length > 1 ? (
+      {missionsData.length > 1 ? (
         <>
           <Header>
             <Header.Arrow
+              /* Buttons will be disabled when there is no next/previous mission in the missionsData array */
               disabled={id === 0}
               action="previous"
               direction="left"
@@ -32,13 +33,13 @@ export const Home = () => {
               <Header.Logo src={logo} />
             </Header.Frame>
             <Header.Arrow
-              disabled={id === missionData.length - 1}
+              disabled={id === missionsData.length - 1}
               action="next"
               direction="right"
               onClick={() => setId((id) => (id += 1))}
             />
           </Header>
-          <MainContainer id={id} data={missionData[id]} />
+          <MainContainer id={id} data={missionsData[id]} />
         </>
       ) : (
         <h1>Loading screen...</h1>

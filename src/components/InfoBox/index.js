@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Title, Info, Inner, Group } from './styles/infoBox';
+import { Container, Title, Info, Inner, Tooltip, Group } from './styles/infoBox';
 
 const InfoBox = ({ children, ...restProps }) => {
   return <Container {...restProps}>{children}</Container>;
@@ -16,6 +16,10 @@ InfoBox.Info = function InfoBoxInfo({ children, ...restProps }) {
 
 InfoBox.Inner = function InfoBoxInner({ children, ...restProps }) {
   return <Inner {...restProps}>{children}</Inner>;
+};
+
+InfoBox.Tooltip = function InfoBoxGroup({ children, ...restProps }) {
+  return <Tooltip {...restProps}>{children}</Tooltip>;
 };
 
 InfoBox.Group = function InfoBoxGroup({ children, ...restProps }) {

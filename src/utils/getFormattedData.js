@@ -7,6 +7,6 @@ export const getFormattedData = (data) => {
     date: `${date.getDate()} ${date.toDateString().split(' ')[1]} ${date.getFullYear()}`,
     mobileDate: data['launch_date_local'].replace('T', ' '),
     site: data['launch_site']['site_name'],
-    siteLong: data['launch_site']['site_long'],
+    siteLong: data['launch_site']['site_name_long'],
   };
 };

@@ -5,7 +5,7 @@ import '@testing-library/jest-dom';
 
 import Header from '../index';
 
-import logo from '../assets/images/logo.png';
+import logo from '../../../assets/images/logo.png';
 
 const mocked = jest.fn();
 

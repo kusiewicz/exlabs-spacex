@@ -29,6 +29,19 @@ export const Title = styled.p`
   }
 `;
 
+export const Tooltip = styled.div`
+  padding: 5px 10px;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  background-color: white;
+  position: relative;
+  bottom: -7px;
+  left: -50px;
+  display: none;
+`;
+
 export const Info = styled.p`
   font-size: ${({ fontSize }) => (fontSize ? fontSize : '18px')};
   font-weight: ${({ bold }) => bold && '500'};
@@ -38,6 +51,11 @@ export const Info = styled.p`
   @media (max-width: 800px) {
     font-size: ${({ mobileFontSize }) => (mobileFontSize ? mobileFontSize : '16px')};
   }
+
+  &:hover {
+    + ${Tooltip} {
+      display: block;
+    }
   }
 `;
 

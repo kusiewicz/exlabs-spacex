@@ -13,8 +13,8 @@ export const Container = styled.div`
 
 export const Arrow = styled.div`
   transform: ${({ direction }) => (direction === 'left' ? 'rotate(135deg)' : 'rotate(-45deg)')};
-  ${({ disabled }) => disabled && 'pointer-events: none'};
-  border: solid white;
+  ${({ disabled }) => disabled && 'pointer-events:none'};
+  border: ${({ disabled }) => (disabled ? 'none' : 'solid white')};
   border-width: 0 4px 4px 0;
   padding: 7px;
   width: 0;

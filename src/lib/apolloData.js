@@ -29,5 +29,3 @@ export async function apolloData() {
   });
   return fetched;
 }
-
-// console.log(fetchedData().then((res) => console.log(res.data.launchesPast)));

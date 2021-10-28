@@ -1,10 +1,20 @@
-import { React } from 'react';
+import { React, useState, useEffect } from 'react';
 import { InfoBox, Button, Status } from '../../components';
 import { getFormattedData } from '../../utils/getFormattedData';
 
 export const MainContainer = ({ data }, recovered = true) => {
-  console.log(data);
-  const { missionName, rocket, date, site, siteLong } = getFormattedData(data);
+  const { missionName, rocket, date, mobileDate, site, siteLong } = getFormattedData(data);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
 
   return (
     <>
@@ -23,17 +33,20 @@ export const MainContainer = ({ data }, recovered = true) => {
               {recovered ? <Status recovered>RECOVERED</Status> : <Status>UNRECOVERED</Status>}
             </InfoBox.Info>
           </InfoBox.Group>
-          <Button>LEARN MORE</Button>
+          <Button name="Learn more" aria="Learn more">
+            LEARN MORE
+          </Button>
         </InfoBox.Inner>
 
         <InfoBox.Inner>
           <InfoBox.Group>
             <InfoBox.Title>LAUNCH DATE</InfoBox.Title>
-            <InfoBox.Info>{date}</InfoBox.Info>
+            <InfoBox.Info>{width > 800 ? date : mobileDate}</InfoBox.Info>
           </InfoBox.Group>
           <InfoBox.Group>
             <InfoBox.Title>LAUNCH SITE</InfoBox.Title>
             <InfoBox.Info>{site}</InfoBox.Info>
+            <InfoBox.Tooltip>{siteLong}</InfoBox.Tooltip>
           </InfoBox.Group>
         </InfoBox.Inner>
       </InfoBox>
