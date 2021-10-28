@@ -23,6 +23,11 @@ export const Title = styled.p`
   margin-bottom: 8px;
   letter-spacing: 1.6px;
 
+  &:last-of-type {
+    margin-top: 36px;
+    margin-bottom: 17px;
+  }
+
   @media (max-width: 800px) {
     margin-bottom: 7px;
     font-size: 14px;

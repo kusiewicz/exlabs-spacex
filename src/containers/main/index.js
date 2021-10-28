@@ -1,9 +1,12 @@
 import { React, useState, useEffect } from 'react';
 import { InfoBox, Button, Status } from '../../components';
+import { ShipContainer } from '../ship';
 import { getFormattedData } from '../../utils/getFormattedData';
 
-export const MainContainer = ({ data }, recovered = true) => {
-  const { missionName, rocket, date, mobileDate, site, siteLong } = getFormattedData(data);
+export const MainContainer = ({ data }) => {
+  const { missionName, rocket, date, mobileDate, site, siteLong, ships, recovered } =
+    getFormattedData(data);
+
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -50,6 +53,7 @@ export const MainContainer = ({ data }, recovered = true) => {
           </InfoBox.Group>
         </InfoBox.Inner>
       </InfoBox>
+      <ShipContainer ships={ships} />
     </>
   );
 };

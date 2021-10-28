@@ -18,13 +18,22 @@ export async function apolloData() {
           }
           rocket {
             rocket_name
+            fairings {
+              recovered
+            }
           }
           launch_date_utc
+          ships {
+            name
+            home_port
+            image
+            weight_kg
+          }
         }
       }
     `,
     variables: {
-      limit: 5,
+      limit: 10,
     },
   });
   return fetched;

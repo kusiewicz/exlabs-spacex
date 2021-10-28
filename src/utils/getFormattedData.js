@@ -8,5 +8,7 @@ export const getFormattedData = (data) => {
     mobileDate: data['launch_date_local'].replace('T', ' '),
     site: data['launch_site']['site_name'],
     siteLong: data['launch_site']['site_name_long'],
+    ships: data['ships'],
+    recovered: data['rocket']['fairings']?.['recovered'],
   };
 };

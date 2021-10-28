@@ -15,8 +15,6 @@ export const Home = () => {
       .then((data) => setData(data.data.launchesPast));
   }, []);
 
-  console.log(missionsData);
-
   return (
     <>
       {missionsData.length > 1 ? (
@@ -42,7 +40,7 @@ export const Home = () => {
           <MainContainer id={id} data={missionsData[id]} />
         </>
       ) : (
-        <h1>Loading screen...</h1>
+        <h1>loading..</h1>
       )}
     </>
   );
