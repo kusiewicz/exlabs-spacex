@@ -25,7 +25,10 @@ export const Home = () => {
               disabled={id <= 1}
               action="previous"
               direction="left"
-              onClick={() => setId((id) => (id -= 1))}
+              onClick={() => {
+                setData([]);
+                setId((id) => (id -= 1));
+              }}
             />
             <Header.Frame>
               <Header.Logo src={logo} />
