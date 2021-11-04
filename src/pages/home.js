@@ -34,7 +34,10 @@ export const Home = () => {
               disabled={id === 108}
               action="next"
               direction="right"
-              onClick={() => setId((id) => (id += 1))}
+              onClick={() => {
+                setData([]);
+                setId((id) => (id += 1));
+              }}
             />
           </Header>
           <MainContainer id={id} data={missionData} />

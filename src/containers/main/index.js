@@ -4,20 +4,27 @@ import { ShipContainer } from '../ships';
 import { getFormattedData } from '../../utils/getFormattedData';
 
 export const MainContainer = ({ data }) => {
+  console.log('rendered');
   const { missionName, rocket, date, mobileDate, site, siteLong, ships, recovered } =
     getFormattedData(data);
 
-  const [width, setWidth] = useState(window.innerWidth);
+  const [screen, setScreen] = useState(window.innerWidth <= 800 ? 'small' : 'large');
+
+  const checkWidth = () => {
+    if (window.innerWidth <= 800) {
+      setScreen('small');
+    } else {
+      setScreen('large');
+    }
+  };
 
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', checkWidth);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', checkWidth);
     };
-  });
+  }, []);
 
   return (
     <>
@@ -44,7 +51,7 @@ export const MainContainer = ({ data }) => {
         <InfoBox.Inner>
           <InfoBox.Group>
             <InfoBox.Title>LAUNCH DATE</InfoBox.Title>
-            <InfoBox.Info>{width > 800 ? date : mobileDate}</InfoBox.Info>
+            <InfoBox.Info>{screen === 'large' ? date : mobileDate}</InfoBox.Info>
           </InfoBox.Group>
           <InfoBox.Group>
             <InfoBox.Title>LAUNCH SITE</InfoBox.Title>
