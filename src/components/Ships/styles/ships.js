@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 export const Title = styled.p`
-  color: #868686;
+  color: ${({ theme }) => theme.fontColor};
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 1.2px;

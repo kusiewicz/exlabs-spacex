@@ -53,7 +53,7 @@ export const Inner = styled.div`
 
 export const Title = styled.p`
   display: inline-block;
-  color: #868686;
+  color: ${({ theme }) => theme.fontColor};
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;

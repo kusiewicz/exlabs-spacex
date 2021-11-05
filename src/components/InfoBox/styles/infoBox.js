@@ -18,7 +18,7 @@ export const Container = styled.div`
 
 export const Title = styled.p`
   font-size: 16px;
-  color: #868686;
+  color: ${({ theme }) => theme.fontColor};
   font-weight: 500;
   margin-bottom: 8px;
   letter-spacing: 1.6px;
