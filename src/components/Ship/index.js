@@ -1,6 +1,17 @@
 import React from 'react';
 
-import { Container, Item, Frame, Image, About, Title, Inner, Name, Info } from './styles/ship';
+import {
+  Container,
+  Item,
+  Frame,
+  Image,
+  About,
+  Title,
+  BannerTitle,
+  Inner,
+  Name,
+  Info,
+} from './styles/ship';
 
 const Ship = ({ children, ...restProps }) => {
   return <Item {...restProps}>{children}</Item>;
@@ -32,6 +43,10 @@ Ship.Name = function ShipName({ children, ...restProps }) {
 
 Ship.Title = function ShipTitle({ children, ...restProps }) {
   return <Title {...restProps}>{children}</Title>;
+};
+
+Ship.BannerTitle = function ShipBannerTitle({ children, ...restProps }) {
+  return <BannerTitle {...restProps}>{children}</BannerTitle>;
 };
 
 Ship.Info = function ShipInfo({ children, ...restProps }) {

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Ship, Ships } from '../../components';
+import { Ship } from '../../components';
 import { v4 as uuidv4 } from 'uuid';
 
 export const ShipContainer = ({ ships }) => {
   return (
     <>
-      <Ships.Title>RESCUE SHIPS</Ships.Title>
-      <Ships>
+      <Ship.BannerTitle>RESCUE SHIPS</Ship.BannerTitle>
+      <Ship.Container>
         {ships.map(
           (ship) =>
             /* some Ships date arrays have null values */
@@ -29,7 +29,7 @@ export const ShipContainer = ({ ships }) => {
               </React.Fragment>
             )
         )}
-      </Ships>
+      </Ship.Container>
     </>
   );
 };
