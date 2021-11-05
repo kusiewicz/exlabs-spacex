@@ -7,7 +7,11 @@ const client = new ApolloClient({
 
 /* id - needed to get mission data (e.g. 1 - newest [available in API]) */
 
+/* in order to prevent the api from being blocked by too many requests */
+const delay = (ms = 700) => new Promise((r) => setTimeout(r, ms));
+
 export async function apolloData(id) {
+  await delay();
   const fetched = await client.query({
     query: gql`
       query ($offset: Int) {
@@ -38,5 +42,6 @@ export async function apolloData(id) {
       offset: id,
     },
   });
+
   return fetched;
 }

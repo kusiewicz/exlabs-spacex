@@ -17,8 +17,9 @@ export const Home = () => {
 
   return (
     <>
-      {Object.keys(missionData).length > 1 ? (
+      {Object.keys(missionData)?.length > 1 ? (
         <>
+          {console.log(missionData)}
           <Header>
             <Header.Arrow
               /* Buttons will be disabled when there is no next/previous mission in the missionsData array */
