@@ -2,7 +2,13 @@ import React from 'react';
 
 import { Container, Text } from './styles/button';
 
-const Button = ({ children, name, aria, ...restProps }) => {
+interface ButtonProps {
+  children: React.ReactNode;
+  name: string;
+  aria: string;
+}
+
+const Button = ({ children, name, aria, ...restProps }: ButtonProps): JSX.Element => {
   return (
     <Container role="button" name={name} aria-label={aria} {...restProps}>
       <Text>{children}</Text>
