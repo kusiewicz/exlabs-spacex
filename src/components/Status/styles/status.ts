@@ -1,6 +1,10 @@
 import styled from 'styled-components/macro';
 
-export const Container = styled.button`
+interface ContainerProps {
+  recovered?: boolean;
+}
+
+export const Container = styled.button<ContainerProps>`
   padding: 3px 5px;
   background-color: ${({ recovered }) => (recovered ? '#6FB46E' : '#BE4E35')};
   border: none;

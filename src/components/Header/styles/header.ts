@@ -11,7 +11,12 @@ export const Container = styled.div`
   }
 `;
 
-export const Arrow = styled.div`
+interface ArrowProps {
+  direction?: string;
+  disabled?: boolean;
+}
+
+export const Arrow = styled.div<ArrowProps>`
   transform: ${({ direction }) => (direction === 'left' ? 'rotate(135deg)' : 'rotate(-45deg)')};
   ${({ disabled }) => disabled && 'pointer-events:none'};
   border: ${({ disabled }) => (disabled ? 'none' : 'solid white')};

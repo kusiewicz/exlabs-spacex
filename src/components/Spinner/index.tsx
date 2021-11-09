@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Spinner } from './styles/spinner';
 
-const Loading = () => {
+const Loading = (): JSX.Element => {
   return (
     <Container>
       <Spinner />

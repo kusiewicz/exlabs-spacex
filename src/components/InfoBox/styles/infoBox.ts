@@ -16,7 +16,11 @@ export const Container = styled.div`
   }
 `;
 
-export const Title = styled.p`
+interface TitleProps {
+  fontColor?: string;
+}
+
+export const Title = styled.p<TitleProps>`
   font-size: 16px;
   color: ${({ theme }) => theme.fontColor};
   font-weight: 500;
@@ -47,7 +51,13 @@ export const Tooltip = styled.div`
   display: none;
 `;
 
-export const Info = styled.p`
+interface InfoProps {
+  fontSize?: string;
+  mobileFontSize?: string;
+  bold?: string;
+}
+
+export const Info = styled.p<InfoProps>`
   font-size: ${({ fontSize }) => (fontSize ? fontSize : '18px')};
   font-weight: ${({ bold }) => bold && '500'};
   color: white;
