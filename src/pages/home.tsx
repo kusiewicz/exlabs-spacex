@@ -12,7 +12,7 @@ export const Home = () => {
   useEffect(() => {
     apolloData(id)
       .catch((err) => console.log(err))
-      .then((data) => setData(data.data.launchLatest));
+      .then((data) => data && setData(data.data.launchLatest));
   }, [id]);
 
   return (

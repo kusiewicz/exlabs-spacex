@@ -10,7 +10,30 @@ const client = new ApolloClient({
 /* in order to prevent the api from being blocked by too many requests */
 const delay = (ms = 700) => new Promise((r) => setTimeout(r, ms));
 
-export async function apolloData(id) {
+export interface ShipProps {
+  name: string;
+  home_port: string;
+  image: string;
+  weight_kg: number;
+}
+export interface DataProps {
+  mission_name: string;
+  launch_date_local: string;
+  launch_date_utc: string;
+  launch_site: {
+    site_name_long: string;
+    site_name: string;
+  };
+  rocket: {
+    rocket_name: string;
+    fairings: {
+      recovered: boolean;
+    };
+  };
+  ships: ShipProps[];
+}
+
+export async function apolloData(id: number) {
   await delay();
   const fetched = await client.query({
     query: gql`

@@ -1,4 +1,6 @@
-export const getFormattedData = (data) => {
+import { DataProps } from '../lib/apolloData';
+
+export const getFormattedData = (data: DataProps) => {
   const date = new Date(data['launch_date_utc']);
 
   return {
